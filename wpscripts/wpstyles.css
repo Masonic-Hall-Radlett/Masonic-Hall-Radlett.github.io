@@ -10,6 +10,10 @@ a:active {color:#78afc7;}
 {
     margin:0.0px 0.0px 0.0px 0.0px; text-align:left; font-weight:400;
 }
+.Wp-Table-Body-P
+{
+    margin:0.0px 0.0px 12.0px 0.0px; text-align:left; font-weight:400;
+}
 .Wp-Default-Paragraph-Font-C
 {
     font-family:"Verdana", sans-serif;
