@@ -187,7 +187,7 @@ if (!CheckEmail($FTGemail, kMandatory)) {
 }
 
 if (!CheckString($FTGMeassage, 1, 200, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
- $FTGErrorMessage['Meassage'] = 'Please enter your message (up to&prime;00 characters).';
+ $FTGErrorMessage['Meassage'] = 'Please enter a message (up to&prime;00 characters).';
  $validationFailed = true;
 }
 
@@ -218,14 +218,17 @@ if ( $validationFailed === false ) {
 
  # Email to Form Owner
   
- $emailSubject = FilterCChars("Masonic Hall Radlett Website : Calendar Form");
+ $emailSubject = FilterCChars("Masonic Hall Radlett Website - Calendar Form");
   
- $emailBody = "Name : $FTGName <email : $FTGemail>\n"
-  . "\n"
-  . "#FTG_E_DATE DD/MM/YYYY#\n"
-  . "\n"
-  . "Meassage : $FTGMeassage";
-  $emailTo = 'Graham <gakolthammer@ntlworld.com>,Masonic Hall Radlett <masonic.hall.radlett@gmail.com>';
+ $emailBody = "Name : $FTGName\n"
+  . "email : $FTGemail\n"
+  . "Meassage : $FTGMeassage\n"
+  . "anti spam : $FTGanti_spam\n"
+  . "Validation : $FTGValidation\n"
+  . "Submit : $FTGSubmit\n"
+  . "Reset : $FTGReset\n"
+  . "";
+  $emailTo = 'Masonic Hall Radlett <masonic.hall.radlett@gmail.com>,GAK <gakolthammer@ntlworld.com>';
    
   $emailFrom = FilterCChars("$FTGemail");
    
@@ -239,7 +242,7 @@ if ( $validationFailed === false ) {
   
   # Redirect user to success page
 
-header("Location: http://www.masonic-hall-radlett.cf/index.html");
+header("Location: http://www.masonic-hall-radlett.cf/calendar_thank_you.html");
 
 }
 
