@@ -2,18 +2,28 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Calendar Comments Form</title>
+<title>Room Form</title>
 <meta name="Generator" content="Serif WebPlus X6">
 <meta name="viewport" content="width=1360">
+<script type="text/javascript">
+function validate_form_1( form )
+{
+    if( ltrim(rtrim(form.elements['Name'].value,' '),' ')=="" ) { alert("Please enter your name."); form.elements['Name'].focus(); return false; }
+    if( ltrim(rtrim(form.elements['email'].value,' '),' ')=="" ) { alert("Please enter a valid email address."); form.elements['email'].focus(); return false; }
+    if( ltrim(rtrim(form.elements['Meassage'].value,' '),' ')=="" ) { alert("Please leave a message."); form.elements['Meassage'].focus(); return false; }
+    if( ltrim(rtrim(form.elements['Validation'].value,' '),' ')=="" ) { alert("Please enter characters correctly."); form.elements['Validation'].focus(); return false; }
+    return true;
+}
+</script>
 <style type="text/css">
 body{margin:0;padding:0;}
 .Normal-P
 {
     margin:0.0px 0.0px 8.0px 0.0px; text-align:left; font-weight:400;
 }
-.Normal-P-P0
+.Body-P
 {
-    margin:0.0px 0.0px 12.0px 0.0px; text-align:justify; font-weight:400;
+    margin:0.0px 0.0px 12.0px 0.0px; text-align:center; font-weight:400;
 }
 .Normal-C
 {
@@ -23,13 +33,17 @@ body{margin:0;padding:0;}
 {
     font-family:"Bookman Old Style", serif; font-weight:700; color:#002060; text-decoration:underline; font-size:11.0px; line-height:1.27em;
 }
-.Body-C
-{
-    font-family:"Comic Sans MS", cursive; font-weight:700; color:#002060; text-decoration:underline; font-size:24.0px; line-height:1.46em;
-}
 .Normal-C-C1
 {
     font-family:"Comic Sans MS", cursive; color:#002060; font-size:19.0px; line-height:1.37em;
+}
+.Body-C
+{
+    font-family:"Comic Sans MS", cursive; color:#002060; font-size:16.0px; line-height:1.44em;
+}
+.Body-C-C0
+{
+    font-family:"Comic Sans MS", cursive; font-weight:700; color:#002060; text-decoration:underline; font-size:24.0px; line-height:1.46em;
 }
 .Button1,.Button1:link,.Button1:visited{background-image:url('wpimages/wpbcd94254_06.png');background-position:0px 0px;text-decoration:none;display:block;position:absolute;}
 .Button1:focus{outline-style:none;}
@@ -67,11 +81,49 @@ body{margin:0;padding:0;}
     pages are recognised by, or have the approval of, the United Grand Lodge of England.</span></p>
 </div>
 <a href="https://www.toyekenningandspencer.co.uk/shop/masonic/english-constitution-regalia/tercentenary.html"  target="_blank"><img src="wpimages/wp18626267_05_06.jpg" border="0" width="97" height="257" alt="" style="position:absolute;left:1172px;top:220px;"></a>
-<div style="position:absolute;left:230px;top:195px;width:900px;height:165px;overflow:hidden;">
-<p class="Wp-Body-P"><span class="Body-C">Calendar Comments Form</span></p>
-<p class="Normal-P-P0"><span class="Normal-C-C1">PAGE UNDER CONSTRUCTION</span></p>
-<p class="Normal-P-P0"><span class="Normal-C-C1"><br></span></p>
+<form id="form_1" name="Room" onsubmit="return validate_form_1(this)" action="Rooms.php" accept-charset="UTF-8" method="post" target="_self" enctype="application/x-www-form-urlencoded" style="margin:0;position:absolute;left:393px;top:300px;width:575px;height:380px;">
+<div style="position:absolute;left:25px;top:25px;width:150px;height:30px;overflow:hidden;">
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Your name:</span></p>
 </div>
+<textarea name="Name" rows="1" cols="44" style="position:absolute; left:175px; top:25px; width:375px; height:30px;"></textarea>
+<div style="position:absolute;left:25px;top:60px;width:150px;height:30px;overflow:hidden;">
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Your email:</span></p>
+</div>
+<textarea name="email" rows="1" cols="44" style="position:absolute; left:175px; top:60px; width:375px; height:30px;"></textarea>
+<div style="position:absolute;left:25px;top:95px;width:150px;height:50px;overflow:hidden;">
+<p class="Wp-Normal-P"><span class="Normal-C-C1">I’m interested in:</span></p>
+</div>
+<div style="position:absolute;left:193px;top:95px;width:80px;height:30px;overflow:hidden;">
+<p class="Body-P"><label for="check_1"><span class="Body-C">Meetings</span></label></p>
+</div>
+<input type="checkbox" id="check_1" name="Meetings" style="position:absolute; left:225px; top:130px;">
+<div style="position:absolute;left:305px;top:95px;width:96px;height:30px;overflow:hidden;">
+<p class="Body-P"><label for="check_2"><span class="Body-C">Rehearsals</span></label></p>
+</div>
+<input type="checkbox" id="check_2" name="Rehearsals" style="position:absolute; left:345px; top:130px;">
+<div style="position:absolute;left:433px;top:95px;width:114px;height:30px;overflow:hidden;">
+<p class="Body-P"><label for="check_3"><span class="Body-C">Function Hire</span></label></p>
+</div>
+<input type="checkbox" id="check_3" name="Function" style="position:absolute; left:483px; top:130px;">
+<div style="position:absolute;left:25px;top:160px;width:150px;height:30px;overflow:hidden;">
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Your message:</span></p>
+</div>
+<textarea name="Meassage" rows="5" cols="44" style="position:absolute; left:175px; top:160px; width:375px; height:90px;"></textarea>
+<div style="position:absolute;left:25px;top:265px;width:195px;height:90px;overflow:hidden;">
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Validation:</span></p>
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Type the characters you see in the picture.</span></p>
+</div>
+<textarea name="anti_spam" rows="3" cols="15" style="position:absolute; left:232px; top:270px; width:140px; height:65px; visibility:hidden; "></textarea>
+<img src="wpimages/wp0_wp982611ff_05_06.jpg" border="0" width="150" height="75" alt="" style="position:absolute;left:227px;top:265px;">
+<textarea name="Validation" rows="1" cols="13" style="position:absolute; left:385px; top:266px; width:125px; height:30px;"></textarea>
+<input type="submit" style="position:absolute; left:385px; top:316px; width:124px; height:22px;" name="Submit" value="Submit">
+<input type="reset" style="position:absolute; left:50px; top:208px; width:76px; height:22px;" name="Reset" value="Reset">
+</form>
+<div style="position:absolute;left:230px;top:195px;width:900px;height:90px; background-color:#ffffff;overflow:hidden;">
+<p class="Wp-Body-P"><span class="Body-C-C0">Room Form</span></p>
+<p class="Wp-Normal-P"><span class="Normal-C-C1">Please complete all required fields:</span></p>
+</div>
+<script type="text/javascript" src="wpscripts/jsValidation.js"></script>
 </div>
 </body>
 </html>
