@@ -191,11 +191,6 @@ if (!CheckString($FTGMeassage, 1, 200, kStringRangeBetween, kNo, kNo, kNo, '', k
  $validationFailed = true;
 }
 
-if (!CheckString($FTGanti_spam, 0, 0, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
- $FTGErrorMessage['anti_spam'] = 'DO NOT USE THIS FIELD';
- $validationFailed = true;
-}
-
 if (!CheckValueList_Validation($FTGValidation, 1, kMandatory)) {
  $FTGErrorMessage['Validation'] = 'Please enter the correct Validation Code.';
  $validationFailed = true;
