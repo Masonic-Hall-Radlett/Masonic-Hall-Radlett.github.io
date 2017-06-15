@@ -114,7 +114,7 @@ function CheckEmail($email, $optional) {
 }
 
 
-function CheckValueList_Validation($ValuesFromField, $ValidationType, $Optional) {
+function CheckValueList_units_validation($ValuesFromField, $ValidationType, $Optional) {
 
  $ValuesListFromText[] = '3092';
 
@@ -161,13 +161,13 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
  $clientIP = $_SERVER['REMOTE_ADDR'];
 }
 
-$FTGName = DoStripSlashes( $_POST['Name'] );
-$FTGemail = DoStripSlashes( $_POST['email'] );
-$FTGMeassage = DoStripSlashes( $_POST['Meassage'] );
-$FTGanti_spam = DoStripSlashes( $_POST['anti_spam'] );
-$FTGValidation = DoStripSlashes( $_POST['Validation'] );
-$FTGSubmit = DoStripSlashes( $_POST['Submit'] );
-$FTGReset = DoStripSlashes( $_POST['Reset'] );
+$FTGvalidation = DoStripSlashes( $_POST['validation'] );
+$FTGunits_name = DoStripSlashes( $_POST['units_name'] );
+$FTGunits_email = DoStripSlashes( $_POST['units_email'] );
+$FTGunits_message = DoStripSlashes( $_POST['units_message'] );
+$FTGunits_validation = DoStripSlashes( $_POST['units_validation'] );
+$FTGsubmit = DoStripSlashes( $_POST['submit'] );
+$FTGreset = DoStripSlashes( $_POST['reset'] );
 
 
 
@@ -176,23 +176,23 @@ $validationFailed = false;
 # Fields Validations
 
 
-if (!CheckString($FTGName, 1, 30, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
- $FTGErrorMessage['Name'] = 'Please enter your name (up to&Prime;0 characters).';
+if (!CheckString($FTGunits_name, 1, 30, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
+ $FTGErrorMessage['units_name'] = 'Please enter your name (up to&Prime;0 characters).';
  $validationFailed = true;
 }
 
-if (!CheckEmail($FTGemail, kMandatory)) {
- $FTGErrorMessage['email'] = 'Please enter a valid email address.';
+if (!CheckEmail($FTGunits_email, kMandatory)) {
+ $FTGErrorMessage['units_email'] = 'Please enter a valid email address.';
  $validationFailed = true;
 }
 
-if (!CheckString($FTGMeassage, 1, 200, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
- $FTGErrorMessage['Meassage'] = 'Please enter a message (up to&prime;00 characters).';
+if (!CheckString($FTGunits_message, 1, 200, kStringRangeBetween, kNo, kNo, kNo, '', kMandatory)) {
+ $FTGErrorMessage['units_message'] = 'Please enter your message (up to&prime;00 characters).';
  $validationFailed = true;
 }
 
-if (!CheckValueList_Validation($FTGValidation, 1, kMandatory)) {
- $FTGErrorMessage['Validation'] = 'Please enter the correct Validation Code.';
+if (!CheckValueList_units_validation($FTGunits_validation, 1, kMandatory)) {
+ $FTGErrorMessage['units_validation'] = '';
  $validationFailed = true;
 }
 
@@ -218,19 +218,19 @@ if ( $validationFailed === false ) {
 
  # Email to Form Owner
   
- $emailSubject = FilterCChars("Masonic Hall Radlett Website - Calendar Form");
+ $emailSubject = FilterCChars("Enquiry from Masonic Hall Radlett website - Units Form");
   
- $emailBody = "Name : $FTGName\n"
-  . "email : $FTGemail\n"
-  . "Meassage : $FTGMeassage\n"
-  . "anti spam : $FTGanti_spam\n"
-  . "Validation : $FTGValidation\n"
-  . "Submit : $FTGSubmit\n"
-  . "Reset : $FTGReset\n"
+ $emailBody = "validation : $FTGvalidation\n"
+  . "units name : $FTGunits_name\n"
+  . "units email : $FTGunits_email\n"
+  . "units message : $FTGunits_message\n"
+  . "units validation : $FTGunits_validation\n"
+  . "submit : $FTGsubmit\n"
+  . "reset : $FTGreset\n"
   . "";
-  $emailTo = 'Masonic Hall Radlett <masonic.hall.radlett@gmail.com>,GAK <gakolthammer@ntlworld.com>';
+  $emailTo = 'GAK <gakolthammer@ntlworld.com>';
    
-  $emailFrom = FilterCChars("$FTGemail");
+  $emailFrom = FilterCChars("$FTGunits_email");
    
   $emailHeader = "From: $emailFrom\n"
    . "MIME-Version: 1.0\n"
@@ -240,9 +240,12 @@ if ( $validationFailed === false ) {
   mail($emailTo, $emailSubject, $emailBody, $emailHeader);
   
   
-  # Redirect user to success page
+  # Include message in the success page and dump it to the browser
 
-header("Location: http://www.masonic-hall-radlett.cf/calendar_thank_you.html");
+$successPage = '<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><title>Success</title></head><body>Thank you for submitting you enquiry, it will be reviewed soon.</body></html>';
+
+
+echo $successPage;
 
 }
 

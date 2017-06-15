@@ -5,21 +5,23 @@
 <title>Units Form</title>
 <meta name="Generator" content="Serif WebPlus X6">
 <meta name="viewport" content="width=1360">
-<script type="text/javascript">
-function validate_form_1( form )
-{
-    if( ltrim(rtrim(form.elements['Name'].value,' '),' ')=="" ) { alert("Please enter your name."); form.elements['Name'].focus(); return false; }
-    if( ltrim(rtrim(form.elements['email'].value,' '),' ')=="" ) { alert("Please enter a valid email address."); form.elements['email'].focus(); return false; }
-    if( ltrim(rtrim(form.elements['Meassage'].value,' '),' ')=="" ) { alert("Please leave a message."); form.elements['Meassage'].focus(); return false; }
-    if( ltrim(rtrim(form.elements['Validation'].value,' '),' ')=="" ) { alert("Please enter characters correctly."); form.elements['Validation'].focus(); return false; }
-    return true;
-}
-</script>
 <style type="text/css">
 body{margin:0;padding:0;}
 .Normal-P
 {
     margin:0.0px 0.0px 8.0px 0.0px; text-align:left; font-weight:400;
+}
+.Body-P
+{
+    margin:0.0px 0.0px 4.0px 0.0px; text-align:right; font-weight:400;
+}
+.Body-P-P0
+{
+    margin:0.0px 0.0px 12.0px 0.0px; text-align:right; font-weight:400;
+}
+.Normal-P-P0
+{
+    margin:0.0px 0.0px 4.0px 0.0px; text-align:left; font-weight:400;
 }
 .Normal-C
 {
@@ -29,13 +31,17 @@ body{margin:0;padding:0;}
 {
     font-family:"Bookman Old Style", serif; font-weight:700; color:#002060; text-decoration:underline; font-size:11.0px; line-height:1.27em;
 }
+.Body-C
+{
+    font-family:"Comic Sans MS", cursive; font-weight:700; color:#002060; text-decoration:underline; font-size:24.0px; line-height:1.46em;
+}
 .Normal-C-C1
 {
     font-family:"Comic Sans MS", cursive; color:#002060; font-size:19.0px; line-height:1.37em;
 }
-.Body-C
+.Body-C-C0
 {
-    font-family:"Comic Sans MS", cursive; font-weight:700; color:#002060; text-decoration:underline; font-size:24.0px; line-height:1.46em;
+    font-family:"Comic Sans MS", cursive; color:#002060; font-size:27.0px; line-height:1.41em;
 }
 .Button1,.Button1:link,.Button1:visited{background-image:url('wpimages/wpbcd94254_06.png');background-position:0px 0px;text-decoration:none;display:block;position:absolute;}
 .Button1:focus{outline-style:none;}
@@ -73,35 +79,35 @@ body{margin:0;padding:0;}
     pages are recognised by, or have the approval of, the United Grand Lodge of England.</span></p>
 </div>
 <a href="https://www.toyekenningandspencer.co.uk/shop/masonic/english-constitution-regalia/tercentenary.html"  target="_blank"><img src="wpimages/wp18626267_05_06.jpg" border="0" width="97" height="257" alt="" style="position:absolute;left:1172px;top:220px;"></a>
-<form id="form_1" name="Units" onsubmit="return validate_form_1(this)" action="" method="post" target="_self" enctype="application/x-www-form-urlencoded" style="margin:0;position:absolute;left:393px;top:300px;width:575px;height:315px;">
-<div style="position:absolute;left:25px;top:25px;width:150px;height:30px;overflow:hidden;">
-<p class="Wp-Normal-P"><span class="Normal-C-C1">Your name:</span></p>
-</div>
-<textarea name="Name" rows="1" cols="44" style="position:absolute; left:175px; top:25px; width:375px; height:30px;"></textarea>
-<div style="position:absolute;left:25px;top:60px;width:150px;height:30px;overflow:hidden;">
-<p class="Wp-Normal-P"><span class="Normal-C-C1">Your email:</span></p>
-</div>
-<textarea name="email" rows="1" cols="44" style="position:absolute; left:175px; top:60px; width:375px; height:30px;"></textarea>
-<div style="position:absolute;left:25px;top:95px;width:150px;height:30px;overflow:hidden;">
-<p class="Wp-Normal-P"><span class="Normal-C-C1">Your message:</span></p>
-</div>
-<textarea name="Meassage" rows="5" cols="44" style="position:absolute; left:175px; top:95px; width:375px; height:90px;"></textarea>
-<div style="position:absolute;left:25px;top:200px;width:195px;height:104px;overflow:hidden;">
-<p class="Wp-Normal-P"><span class="Normal-C-C1">Validation:</span></p>
-<p class="Wp-Normal-P"><span class="Normal-C-C1">Type the characters you see in the picture.</span></p>
-<p class="Wp-Normal-P"><span class="Normal-C-C1"><br></span></p>
-</div>
-<textarea name="anti_spam" rows="3" cols="15" style="position:absolute; left:232px; top:205px; width:140px; height:65px; visibility:hidden; "></textarea>
-<img src="wpimages/wp0_wp982611ff_05_06.jpg" border="0" width="150" height="75" alt="" style="position:absolute;left:227px;top:200px;">
-<textarea name="Validation" rows="1" cols="13" style="position:absolute; left:385px; top:201px; width:125px; height:30px;"></textarea>
-<input type="submit" style="position:absolute; left:385px; top:251px; width:124px; height:22px;" name="Submit" value="Submit">
-<input type="reset" style="position:absolute; left:50px; top:143px; width:76px; height:22px;" name="Reset" value="Reset">
-</form>
 <div style="position:absolute;left:230px;top:195px;width:900px;height:90px; background-color:#ffffff;overflow:hidden;">
 <p class="Wp-Body-P"><span class="Body-C">Units Form</span></p>
 <p class="Wp-Normal-P"><span class="Normal-C-C1">Please complete all required fields:</span></p>
 </div>
-<script type="text/javascript" src="wpscripts/jsValidation.js"></script>
+<form id="form_28" name="UNITS" action="Units.php" accept-charset="UTF-8" method="post" target="_self" enctype="text/plain" style="margin:0;position:absolute;left:310px;top:300px;width:660px;height:510px;">
+<input type="hidden" name="validation" value="3092">
+<textarea name="units_name" rows="2" cols="47" style="position:absolute; left:240px; top:20px; width:400px; height:50px;"></textarea>
+<textarea name="units_email" rows="2" cols="47" style="position:absolute; left:240px; top:90px; width:400px; height:50px;"></textarea>
+<textarea name="units_message" rows="12" cols="47" style="position:absolute; left:240px; top:160px; width:400px; height:200px;"></textarea>
+<textarea name="units_validation" rows="2" cols="22" style="position:absolute; left:440px; top:381px; width:200px; height:50px;"></textarea>
+<input type="submit" style="position:absolute; left:440px; top:450px; width:200px; height:22px;" name="submit" value="SUBMIT FORM">
+<input type="reset" style="position:absolute; left:20px; top:230px; width:200px; height:22px;" name="reset" value="RESET FORM">
+<div style="position:absolute;left:20px;top:20px;width:200px;height:50px;overflow:hidden;">
+<p class="Body-P"><span class="Body-C-C0">Your name:</span></p>
+</div>
+<div style="position:absolute;left:20px;top:90px;width:200px;height:50px;overflow:hidden;">
+<p class="Body-P"><span class="Body-C-C0">Your email:</span></p>
+</div>
+<div style="position:absolute;left:20px;top:160px;width:200px;height:50px;overflow:hidden;">
+<p class="Body-P"><span class="Body-C-C0">Your Message:</span></p>
+</div>
+<div style="position:absolute;left:20px;top:380px;width:200px;height:50px;overflow:hidden;">
+<p class="Body-P-P0"><span class="Body-C-C0">Validation:</span></p>
+</div>
+<div style="position:absolute;left:20px;top:430px;width:200px;height:60px;overflow:hidden;">
+<p class="Normal-P-P0"><span class="Normal-C-C1">Type the characters you see in the picture.</span></p>
+</div>
+<img src="wpimages/wp0_wp982611ff_05_06.jpg" border="0" width="150" height="50" alt="" style="position:absolute;left:255px;top:380px;">
+</form>
 </div>
 </body>
 </html>
