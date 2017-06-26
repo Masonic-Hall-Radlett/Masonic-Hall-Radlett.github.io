@@ -105,12 +105,19 @@ a.hlink_1:active {color:#78afc7;}
     <area shape="rect" coords="875,0,901,26" href="http://pglherts.org/tercentenary-2/hertfordshire-celebrations/" target="_blank" alt="">
 </map>
 <img src="wpimages/wp12520826_05_06.jpg" border="0" width="900" height="489" alt="" usemap="#map0" style="position:absolute;left:230px;top:195px;">
-<div style="position:absolute;left:705px;top:700px;width:425px;height:375px;">
-    https://www.google.co.uk/maps/place/Masonic+Hall,+The+Rose+Walk,+Radlett+WD7+7JS/@51.6777835,-0.3180146,17z/data=!3m1!4b1!4m5!3m4!1s0x4876158932b9ae19:0x6aba40ed40bb5688!8m2!3d51.6777835!4d-0.3158259
-</div>
 <div style="position:absolute;left:230px;top:1100px;width:900px;height:775px;">
     <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=775&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=q40d9um41s1qn178fc313og8as%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Europe%2FLondon" style="border-width:0" width="900" height="775" frameborder="0" scrolling="no"></iframe>
 </div>
+<div id="map_2" style="position:absolute;left:705px;top:700px;width:425px;height:375px;border:1px solid #979797;background-color:#e5e3df;">
+    <div style="padding:1em; color:gray;">Loading...</div>
 </div>
+</div>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?amp;vs=3.3&sensor=false"></script>
+<script type="text/javascript" src="wpscripts/jsWPGoogleMaps.js"></script>
+<script type="text/javascript">
+var map_2_Arr = new Array();
+map_2_Arr[0] = new wpGMapMarker( 51.6776913899839410, -0.3149664402008057, 0, 'Masoic Hall Radlett', 'Masoic Hall Radlett', 0, 0, 1 );
+wpGMapLoad( 'map_2', 51.6778300693792830, -0.3150534238036462, 17, 0, 1, 1, 1, 1, 1, map_2_Arr, 'Failed to generate Google map.', '<br>Street view is not available at this location.' );
+</script>
 </body>
 </html>
